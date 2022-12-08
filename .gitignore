@@ -1,0 +1,13 @@
+# Object files
+*.o
+
+# Executables
+*.exe
+*.out
+
+# Debug files
+*.dSYM/
+
+# Extra files
+.DS_Store
+.vscode

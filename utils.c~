@@ -1,0 +1,276 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include <ctype.h>
+#include "utils.h"
+#include "palabra.h"
+#include "tablahash.h"
+#include "glist.h"
+
+
+/**
+ * Funcion de hash para strings propuesta por Kernighan & Ritchie en "The C
+ * Programming Language (Second Ed.)".
+ */
+unsigned KRHash(Palabra word) {
+  unsigned hashval;
+  char* s = word->str;
+  for (hashval = 0; *s != '\0'; ++s) {
+    hashval = *s + 31 * hashval;
+  }
+  return hashval;
+}
+
+
+    unsigned 
+    djb2(Palabra word)
+    {
+        unsigned hash = 5381;
+        int c;
+        char *str = word->str;
+
+        while ((c = *str++))  
+            hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
+
+        return hash;
+    }
+
+
+
+// Lee y agrega las palabras al diccionario
+void leer_diccionario(char* path, TablaHash tabla){
+  FILE* file = fopen(path, "r");
+  unsigned size = 30;
+  char buff[size];
+  int c;
+  size_t i = 0;
+
+  while((c = getc(file)) != EOF){
+    // Si no llega al final de linea, sigue leyendo
+    if(c != '\n')
+      buff[i++] = c;
+    
+    // Llega al final de linea, agrega el caracter terminador
+    // y luego agrega la palabra al diccionario
+    else{
+      buff[i] = '\0';
+      Palabra palabra = palabra_crear(buff, i);
+      tablahash_insertar(tabla, palabra);
+      palabra_destruir(palabra);
+      i = 0;
+    }
+  }
+  fclose(file);
+  return;
+}
+
+void readfile(char* entrada, char* salida, TablaHash tabla){
+  FILE* file1 = fopen(entrada, "r");
+  FILE* file2 = fopen(salida, "w");
+  int linea = 1, flag = 1;
+  Palabra palabra;
+  Sugerencias sugerencias;
+  TablaHash palabras_chequeadas = tablahash_crear(10,
+                  (FuncionComparadora) palabra_comparar, 
+                  (FuncionDestructora) palabra_destruir,
+                  (FuncionHash) djb2, (FuncionCopia) palabra_copia);
+
+  while (flag){
+    palabra = leer_palabra(file1, &linea, &flag);
+    sugerencias = crear_sugerencias(palabra->str);
+    if (!tablahash_buscar(palabras_chequeadas, palabra) && !tablahash_buscar(tabla, palabra)){
+      fprintf(file2, "Linea %d, %s no esta en el diccionario.\n", linea, palabra->str);
+      buscar_sugerencias(palabra, tabla, sugerencias, file2, palabras_chequeadas);
+      fprintf(file2, "\n\n");
+    }
+    palabra_destruir(palabra);
+    glist_destruir(sugerencias->list, tabla->destr);
+    free(sugerencias);
+  }
+  tablahash_destruir(palabras_chequeadas);
+  fclose(file1);
+  fclose(file2);
+  return;
+}
+
+Palabra leer_palabra(FILE* archivo, int* linea, int* flag){
+  char buff[30];
+  int i = 0;
+  char c;
+  Palabra palabra;
+
+  while ((c = getc(archivo)) != EOF){
+    c = tolower(c);
+
+    if (isalpha(c)){
+      buff[i++] = c;
+    }
+    else{
+      buff[i] = '\0';
+      palabra = palabra_crear(buff, i);
+      if (c == '\n')
+        (*linea)++;
+      return palabra;
+    }
+  }
+  if (c == EOF){
+    *flag = 0;
+  }
+    
+  buff[i] = '\0';
+  palabra = palabra_crear(buff, i);
+  return palabra;
+}
+
+TablaHash leer_cache(FILE* archivo){
+  char buff[30];
+  char c;
+  int i = 0, count = 0, cant_sug;
+  char* palabra = malloc(sizeof(char) * 20);
+  GList sugs_list;
+  Palabra word;
+  TablaHash palabras_en_cache = tablahash_crear(10,
+                  (FuncionComparadora) palabra_comparar, 
+                  (FuncionDestructora) palabra_destruir,
+                  (FuncionHash) djb2, (FuncionCopia) palabra_copia);
+
+  // bdsadh, 5, hola, holas, caca, nashe, Xd
+  while ((c = getc(archivo)) != EOF){
+
+    if ((count == 0) && (c != ',') && (isalpha(c)))
+      buff[i++] = c;
+
+    else if (count == 0){
+      count++;
+      buff[i] = '\0';
+      memcpy(palabra, buff, i+1);
+      word = palabra_crear(palabra, i);
+      tablahash_insertar(palabras_en_cache, word);
+      palabra_destruir(word);
+      i = 0;
+    }
+          
+    if ((count == 1) && (c != ',') && isalnum(c)){
+      cant_sug = c - '0';
+      count++;
+      sugs_list = glist_crear();
+    }
+
+    if ((count == 2) && (c != ',') && ((c == ' ') || (isalpha(c)))){
+      buff[i++] = c;
+    }
+
+    else if ((count == 2) && (c == ',')){
+      buff[i] = '\0';
+      word = palabra_crear(buff+1,i);
+      sugs_list = glist_agregar_inicio(sugs_list, word,(FuncionCopia)palabra_copia);
+      palabra_destruir(word);
+      i = 0;
+    }
+
+    if ((count == 2) && (c == '\n')) {
+      Sugerencias sugs = crear_sugerencias(palabra);
+      sugs->list = sugs_list;
+      sugs->cant_sug = cant_sug;
+      printf("%s, cantidad: %d\n", sugs->palabra, sugs->cant_sug);
+      glist_recorrer(sugs->list, (FuncionVisitante)palabra_imprimir);
+      sugerencias_destruir(sugs, (FuncionDestructora)palabra_destruir);
+      count = 0;
+    }
+  }
+  
+  return palabras_en_cache;
+}
+
+
+void escribir_cache(FILE* arch, char* palabra, int cant_sugs, GList list){
+  if (cant_sugs == 0){
+    fprintf(arch, "%s, ", palabra);  
+    fprintf(arch, "%d, \n", cant_sugs);
+    return;
+  }
+  fprintf(arch, "%s, ", palabra);
+  fprintf(arch, "%d, ", cant_sugs);
+  for (GList node = list; node != NULL; node = node->next)
+    fprintf(arch, "%s, ", ((Palabra)(node->data))->str);
+  fprintf(arch, "\n");
+  return;
+}
+
+Sugerencias distancia_n(Palabra palabra, TablaHash tabla, Sugerencias sug,
+                        GList* no_encontradas, TablaHash tne, int dist){
+
+  if(sug->cant_sug < 5)                          
+    sug = palabra_dividir(palabra, tabla, sug);
+
+  if(sug->cant_sug < 5)
+    sug = palabra_permutar(palabra, tabla, sug, no_encontradas, tne, dist);
+
+  if(sug->cant_sug < 5)
+    sug = palabra_borrar_caracter(palabra, tabla, sug, no_encontradas, tne, dist);  
+  
+  if(sug->cant_sug < 5)
+    sug = palabra_cambiar_caracter(palabra, tabla, sug, no_encontradas, tne, dist);
+
+  if(sug->cant_sug < 5)
+    sug = palabra_agregar_caracter(palabra, tabla, sug, no_encontradas, tne, dist);
+
+  return sug;
+
+}
+
+void buscar_sugerencias(Palabra palabra, TablaHash tabla, Sugerencias sug, FILE* file, TablaHash chequeadas){
+
+  // Lista en la que guardaremos palabras a las cuales se les aplicará 
+  // las reglas 2 y 3 en caso de ser necesario
+  GList no_encontradas = glist_crear();
+  // Tabla en la que se guardaran las palabras a
+  // las cuales se les aplico alguna regla
+  TablaHash tabla_no_encontradas = tablahash_crear(10,
+                  (FuncionComparadora) palabra_comparar, 
+                  (FuncionDestructora) palabra_destruir,
+                  (FuncionHash) djb2, (FuncionCopia) palabra_copia);
+
+  int bandera = 1, dist = 1;
+  // Buscamos sugerencias a distancia 1
+  sug = distancia_n(palabra, tabla, sug, &no_encontradas, tabla_no_encontradas,dist);
+  dist++;
+
+  GList no_encontradas2;
+  GList aux;
+
+  // No se encontraron 5 sugerencias, asi que buscamos sugerencias
+  // a distancia 2 y 3
+  if(sug->cant_sug < 5){
+    while(bandera && dist <= 3){
+      no_encontradas2 = glist_crear();
+      for(GList node = no_encontradas; node != NULL && sug->cant_sug < 5;){
+        sug = distancia_n(node->data, tabla, sug, &no_encontradas2, tabla_no_encontradas,dist);
+        node = node->next;
+      } 
+      aux = no_encontradas;
+      no_encontradas = no_encontradas2;
+      glist_destruir(aux,  tabla->destr);
+      if (sug->cant_sug >= 5)
+        bandera = 0;
+      dist++;
+    }
+  }
+  FILE* cache = fopen("cache.txt", "a");
+
+  escribir_cache(cache, palabra->str, sug->cant_sug, sug->list);
+
+  if(sug->cant_sug <= 0)
+    fprintf(file, "No se encontraron sugerencias para esta palabra");
+
+  else{
+    fprintf(file, "Quizas quiso decir: ");
+    for(GList node = sug->list; node != NULL; node = node->next)
+      fprintf(file, "%s, ", ((Palabra)node->data)->str);
+  }
+  tablahash_insertar(chequeadas, palabra);
+  fclose(cache);
+  glist_destruir(no_encontradas, tabla->destr);
+  tablahash_destruir(tabla_no_encontradas);
+  return;
+}

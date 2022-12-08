@@ -1,0 +1,330 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 22.81      0.23     0.23  3446522     0.00     0.00  tablahash_buscar
+ 18.84      0.42     0.19  4742656     0.00     0.00  glist_buscar
+ 11.90      0.54     0.12  4742656     0.00     0.00  djb2
+ 11.90      0.66     0.12       27     4.45     4.77  tablahash_redimensionar
+ 10.91      0.77     0.11  1296134     0.00     0.00  tablahash_insertar
+  6.94      0.84     0.07  1981878     0.00     0.00  palabra_comparar
+  6.94      0.91     0.07   502859     0.00     0.00  glist_destruir
+  4.96      0.96     0.05  3835165     0.00     0.00  palabra_destruir
+  1.98      0.98     0.02     9658     0.00     0.03  palabra_agregar_caracter
+  1.98      1.00     0.02        1    20.03   375.73  leer_diccionario
+  0.99      1.01     0.01  1305786     0.00     0.00  glist_agregar_inicio
+  0.00      1.01     0.00  3835165     0.00     0.00  palabra_crear
+  0.00      1.01     0.00  1305786     0.00     0.00  palabra_copia
+  0.00      1.01     0.00     9658     0.00     0.06  distancia_n
+  0.00      1.01     0.00     9658     0.00     0.00  palabra_borrar_caracter
+  0.00      1.01     0.00     9658     0.00     0.02  palabra_cambiar_caracter
+  0.00      1.01     0.00     9658     0.00     0.00  palabra_dividir
+  0.00      1.01     0.00     9658     0.00     0.00  palabra_permutar
+  0.00      1.01     0.00       35     0.00     0.00  glist_crear
+  0.00      1.01     0.00        2     0.00     0.00  crear_sugerencias
+  0.00      1.01     0.00        2     0.00     0.00  tablahash_crear
+  0.00      1.01     0.00        2     0.00    39.23  tablahash_destruir
+  0.00      1.01     0.00        1     0.00   596.60  buscar_sugerencias
+  0.00      1.01     0.00        1     0.00   596.60  readfile
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 2 byte(s) for 0.99% of 1.01 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00    1.01                 main [1]
+                0.00    0.60       1/1           readfile [2]
+                0.02    0.36       1/1           leer_diccionario [6]
+                0.00    0.04       1/2           tablahash_destruir [15]
+                0.00    0.00       1/2           tablahash_crear [26]
+-----------------------------------------------
+                0.00    0.60       1/1           main [1]
+[2]     59.0    0.00    0.60       1         readfile [2]
+                0.00    0.60       1/1           buscar_sugerencias [3]
+                0.00    0.00       2/502859      glist_destruir [14]
+                0.00    0.00       2/3446522     tablahash_buscar [5]
+                0.00    0.00       2/3835165     palabra_destruir [17]
+                0.00    0.00       2/3835165     palabra_crear [22]
+                0.00    0.00       2/2           crear_sugerencias [25]
+-----------------------------------------------
+                0.00    0.60       1/1           readfile [2]
+[3]     59.0    0.00    0.60       1         buscar_sugerencias [3]
+                0.00    0.56    9658/9658        distancia_n [4]
+                0.00    0.04       1/2           tablahash_destruir [15]
+                0.00    0.00       3/502859      glist_destruir [14]
+                0.00    0.00       3/35          glist_crear [24]
+                0.00    0.00       1/2           tablahash_crear [26]
+-----------------------------------------------
+                0.00    0.56    9658/9658        buscar_sugerencias [3]
+[4]     55.1    0.00    0.56    9658         distancia_n [4]
+                0.02    0.29    9658/9658        palabra_agregar_caracter [8]
+                0.00    0.23    9658/9658        palabra_cambiar_caracter [10]
+                0.00    0.01    9658/9658        palabra_borrar_caracter [19]
+                0.00    0.01    9658/9658        palabra_dividir [20]
+                0.00    0.00    9658/9658        palabra_permutar [21]
+-----------------------------------------------
+                0.00    0.00       2/3446522     readfile [2]
+                0.00    0.00   28700/3446522     palabra_permutar [21]
+                0.00    0.00   48377/3446522     palabra_dividir [20]
+                0.00    0.00   58759/3446522     palabra_borrar_caracter [19]
+                0.10    0.12 1527734/3446522     palabra_cambiar_caracter [10]
+                0.12    0.14 1782950/3446522     palabra_agregar_caracter [8]
+[5]     50.1    0.23    0.28 3446522         tablahash_buscar [5]
+                0.14    0.05 3446522/4742656     glist_buscar [9]
+                0.09    0.00 3446522/4742656     djb2 [13]
+-----------------------------------------------
+                0.02    0.36       1/1           main [1]
+[6]     37.1    0.02    0.36       1         leer_diccionario [6]
+                0.23    0.12  620892/630549      tablahash_insertar <cycle 1> [11]
+                0.01    0.00  620892/3835165     palabra_destruir [17]
+                0.00    0.00  620892/3835165     palabra_crear [22]
+-----------------------------------------------
+[7]     34.9    0.23    0.12  630549+665612  <cycle 1 as a whole> [7]
+                0.11    0.11 1296134             tablahash_insertar <cycle 1> [11]
+                0.12    0.01      27             tablahash_redimensionar <cycle 1> [12]
+-----------------------------------------------
+                0.02    0.29    9658/9658        distancia_n [4]
+[8]     30.2    0.02    0.29    9658         palabra_agregar_caracter [8]
+                0.12    0.14 1782950/3446522     tablahash_buscar [5]
+                0.02    0.00 1754350/3835165     palabra_destruir [17]
+                0.00    0.00 1754350/3835165     palabra_crear [22]
+-----------------------------------------------
+                0.05    0.02 1296134/4742656     tablahash_insertar <cycle 1> [11]
+                0.14    0.05 3446522/4742656     tablahash_buscar [5]
+[9]     25.7    0.19    0.07 4742656         glist_buscar [9]
+                0.07    0.00 1981878/1981878     palabra_comparar [16]
+-----------------------------------------------
+                0.00    0.23    9658/9658        distancia_n [4]
+[10]    22.8    0.00    0.23    9658         palabra_cambiar_caracter [10]
+                0.10    0.12 1527734/3446522     tablahash_buscar [5]
+                0.00    0.00    9651/630549      tablahash_insertar <cycle 1> [11]
+                0.00    0.00    9651/1305786     glist_agregar_inicio [18]
+-----------------------------------------------
+                              665585             tablahash_redimensionar <cycle 1> [12]
+                0.00    0.00       6/630549      palabra_borrar_caracter [19]
+                0.00    0.00    9651/630549      palabra_cambiar_caracter [10]
+                0.23    0.12  620892/630549      leer_diccionario [6]
+[11]    22.2    0.11    0.11 1296134         tablahash_insertar <cycle 1> [11]
+                0.05    0.02 1296134/4742656     glist_buscar [9]
+                0.03    0.00 1296134/4742656     djb2 [13]
+                0.01    0.00 1296129/1305786     glist_agregar_inicio [18]
+                                  27             tablahash_redimensionar <cycle 1> [12]
+-----------------------------------------------
+                                  27             tablahash_insertar <cycle 1> [11]
+[12]    12.7    0.12    0.01      27         tablahash_redimensionar <cycle 1> [12]
+                0.01    0.00  665585/3835165     palabra_destruir [17]
+                              665585             tablahash_insertar <cycle 1> [11]
+-----------------------------------------------
+                0.03    0.00 1296134/4742656     tablahash_insertar <cycle 1> [11]
+                0.09    0.00 3446522/4742656     tablahash_buscar [5]
+[13]    11.9    0.12    0.00 4742656         djb2 [13]
+-----------------------------------------------
+                0.00    0.00       2/502859      readfile [2]
+                0.00    0.00       3/502859      buscar_sugerencias [3]
+                0.07    0.01  502854/502859      tablahash_destruir [15]
+[14]     7.8    0.07    0.01  502859         glist_destruir [14]
+                0.01    0.00  640201/3835165     palabra_destruir [17]
+-----------------------------------------------
+                0.00    0.04       1/2           main [1]
+                0.00    0.04       1/2           buscar_sugerencias [3]
+[15]     7.8    0.00    0.08       2         tablahash_destruir [15]
+                0.07    0.01  502854/502859      glist_destruir [14]
+-----------------------------------------------
+                0.07    0.00 1981878/1981878     glist_buscar [9]
+[16]     6.9    0.07    0.00 1981878         palabra_comparar [16]
+-----------------------------------------------
+                0.00    0.00       2/3835165     readfile [2]
+                0.00    0.00   57817/3835165     palabra_borrar_caracter [19]
+                0.00    0.00   96318/3835165     palabra_dividir [20]
+                0.01    0.00  620892/3835165     leer_diccionario [6]
+                0.01    0.00  640201/3835165     glist_destruir [14]
+                0.01    0.00  665585/3835165     tablahash_redimensionar <cycle 1> [12]
+                0.02    0.00 1754350/3835165     palabra_agregar_caracter [8]
+[17]     5.0    0.05    0.00 3835165         palabra_destruir [17]
+-----------------------------------------------
+                0.00    0.00       6/1305786     palabra_borrar_caracter [19]
+                0.00    0.00    9651/1305786     palabra_cambiar_caracter [10]
+                0.01    0.00 1296129/1305786     tablahash_insertar <cycle 1> [11]
+[18]     1.0    0.01    0.00 1305786         glist_agregar_inicio [18]
+                0.00    0.00 1305786/1305786     palabra_copia [23]
+-----------------------------------------------
+                0.00    0.01    9658/9658        distancia_n [4]
+[19]     0.9    0.00    0.01    9658         palabra_borrar_caracter [19]
+                0.00    0.00   58759/3446522     tablahash_buscar [5]
+                0.00    0.00   57817/3835165     palabra_destruir [17]
+                0.00    0.00       6/630549      tablahash_insertar <cycle 1> [11]
+                0.00    0.00       6/1305786     glist_agregar_inicio [18]
+                0.00    0.00   57817/3835165     palabra_crear [22]
+-----------------------------------------------
+                0.00    0.01    9658/9658        distancia_n [4]
+[20]     0.8    0.00    0.01    9658         palabra_dividir [20]
+                0.00    0.00   48377/3446522     tablahash_buscar [5]
+                0.00    0.00   96318/3835165     palabra_destruir [17]
+                0.00    0.00   96318/3835165     palabra_crear [22]
+-----------------------------------------------
+                0.00    0.00    9658/9658        distancia_n [4]
+[21]     0.4    0.00    0.00    9658         palabra_permutar [21]
+                0.00    0.00   28700/3446522     tablahash_buscar [5]
+-----------------------------------------------
+                0.00    0.00       2/3835165     readfile [2]
+                0.00    0.00   57817/3835165     palabra_borrar_caracter [19]
+                0.00    0.00   96318/3835165     palabra_dividir [20]
+                0.00    0.00  620892/3835165     leer_diccionario [6]
+                0.00    0.00 1305786/3835165     palabra_copia [23]
+                0.00    0.00 1754350/3835165     palabra_agregar_caracter [8]
+[22]     0.0    0.00    0.00 3835165         palabra_crear [22]
+-----------------------------------------------
+                0.00    0.00 1305786/1305786     glist_agregar_inicio [18]
+[23]     0.0    0.00    0.00 1305786         palabra_copia [23]
+                0.00    0.00 1305786/3835165     palabra_crear [22]
+-----------------------------------------------
+                0.00    0.00       2/35          crear_sugerencias [25]
+                0.00    0.00       3/35          buscar_sugerencias [3]
+                0.00    0.00      30/35          tablahash_crear [26]
+[24]     0.0    0.00    0.00      35         glist_crear [24]
+-----------------------------------------------
+                0.00    0.00       2/2           readfile [2]
+[25]     0.0    0.00    0.00       2         crear_sugerencias [25]
+                0.00    0.00       2/35          glist_crear [24]
+-----------------------------------------------
+                0.00    0.00       1/2           main [1]
+                0.00    0.00       1/2           buscar_sugerencias [3]
+[26]     0.0    0.00    0.00       2         tablahash_crear [26]
+                0.00    0.00      30/35          glist_crear [24]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function is in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+
+Index by function name
+
+   [3] buscar_sugerencias      [8] palabra_agregar_caracter [2] readfile
+  [25] crear_sugerencias      [19] palabra_borrar_caracter [5] tablahash_buscar
+   [4] distancia_n            [10] palabra_cambiar_caracter [26] tablahash_crear
+  [13] djb2                   [16] palabra_comparar       [15] tablahash_destruir
+  [18] glist_agregar_inicio   [23] palabra_copia          [11] tablahash_insertar
+   [9] glist_buscar           [22] palabra_crear          [12] tablahash_redimensionar
+  [24] glist_crear            [17] palabra_destruir        [7] <cycle 1>
+  [14] glist_destruir         [20] palabra_dividir
+   [6] leer_diccionario       [21] palabra_permutar
