@@ -5,7 +5,6 @@
 #include "palabra.h"
 #include "tablahash.h"
 #include "glist.h"
-#include "utils.h"
 
 
 Palabra palabra_crear(char* palabra, unsigned len){
@@ -34,12 +33,6 @@ Palabra palabra_identidad(Palabra palabra){
 void palabra_destruir(Palabra palabra){
     free(palabra->str);
     free(palabra);
-}
-
-void palabra_imprimir(Palabra palabra){
-    printf("%s ", palabra->str);
-    printf("\n");
-    return;
 }
 
 int palabra_comparar(Palabra palabra1, Palabra palabra2){
@@ -97,7 +90,7 @@ Sugerencias palabra_permutar(Palabra palabra, TablaHash tabla, Sugerencias sug,
       palabra->str[i-1] = palabra->str[i];
       palabra->str[i] = aux;
       if (tablahash_buscar(tabla, palabra) && !glist_buscar(sug->list,palabra,tabla->comp)){
-        sug->list = glist_agregar_final(sug->list, palabra, (FuncionCopia)palabra_copia);
+        sug->list = glist_agregar_final(sug->list, palabra, (FuncionCopiadora)palabra_copia);
         sug->cant_sug++;
       }
 
@@ -155,7 +148,7 @@ Sugerencias palabra_cambiar_caracter(Palabra palabra, TablaHash tabla, Sugerenci
     for(char c = 'a'; c <= 'z'; c++){
       palabra->str[i] = c;
       if(tablahash_buscar(tabla, palabra) && !glist_buscar(sug->list,palabra,tabla->comp)){
-        sug->list = glist_agregar_final(sug->list, palabra, (FuncionCopia)palabra_copia);
+        sug->list = glist_agregar_final(sug->list, palabra, (FuncionCopiadora)palabra_copia);
         sug->cant_sug++;
       }
       
@@ -206,36 +199,3 @@ Sugerencias palabra_agregar_caracter(Palabra palabra, TablaHash tabla, Sugerenci
     return sug;
 }
 
-Sugerencias crear_sugerencias(char* word, int cant_sug, int cache){
-    Sugerencias sug = malloc(sizeof(struct _Sugerencias));
-
-    sug->palabra = malloc(sizeof(char) * 30);
-    strcpy(sug->palabra, word);
-    sug->list = glist_crear();
-    sug->cant_sug = cant_sug;
-    sug->cache = cache;
-    return sug;
-}
-
-void sugerencia_imprimir_palabra(Sugerencias sug){
-  printf("%s ", sug->palabra);
-  return;
-}
-
-void sugerencias_destruir(Sugerencias sug){
-  free(sug->palabra);
-  glist_destruir(sug->list, (FuncionDestructora)palabra_destruir);
-  free(sug);
-  return;
-}
-
-int sugerencia_comparar(Sugerencias sug1, Sugerencias sug2){
-  return strcmp(sug1->palabra, sug2->palabra);
-}
-
-Sugerencias sugerencia_copia(Sugerencias sug){
-  Sugerencias sug_copia = crear_sugerencias(sug->palabra, sug->cant_sug, sug->cache);
-  for (GList node = sug->list; node != NULL; node = node->next)
-    sug_copia->list = glist_agregar_final(sug_copia->list,node->data,(FuncionCopia)palabra_copia);
-  return sug_copia;
-}

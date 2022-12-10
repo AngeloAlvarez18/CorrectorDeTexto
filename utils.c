@@ -1,12 +1,10 @@
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
-#include <assert.h>
-#include "utils.h"
+#include <string.h>
 #include "palabra.h"
-#include "tablahash.h"
-#include "glist.h"
+#include "sugerencias.h"
+
 
 
 unsigned djb2(Palabra word) {
@@ -77,7 +75,7 @@ void leer_y_corregir(char *entrada, char *salida, char *cache,TablaHash tabla) {
                                 (FuncionComparadora)sugerencia_comparar,
                                 (FuncionDestructora)sugerencias_destruir,
                                 (FuncionHash) djb2_sug,
-                                (FuncionCopia) sugerencia_copia);
+                                (FuncionCopiadora) sugerencia_copia);
   
   FILE* arch_cache = fopen(cache, "r");
   if (arch_cache == NULL)
@@ -191,7 +189,7 @@ void leer_cache(FILE * archivo, TablaHash cache) {
       word = palabra_crear(buff+1, i);
   
       if (word->len)
-        sug->list = glist_agregar_final(sug->list, word, (FuncionCopia) palabra_copia);
+        sug->list = glist_agregar_final(sug->list, word, (FuncionCopiadora) palabra_copia);
       palabra_destruir(word);
       i = 0;
     }
@@ -259,7 +257,7 @@ Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla, Sugerencias sug
                                   (FuncionComparadora)palabra_comparar,
                                   (FuncionDestructora)palabra_destruir,
                                   (FuncionHash) djb2,
-                                  (FuncionCopia)palabra_copia);
+                                  (FuncionCopiadora)palabra_copia);
 
   int bandera = 1, dist = 1;
   // Buscamos sugerencias a distancia 1

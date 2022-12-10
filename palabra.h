@@ -2,17 +2,7 @@
 #define __PALABRA_H__
 #include <stddef.h>
 #include "tablahash.h"
-#include "glist.h"
-
-
-typedef struct _Sugerencias *Sugerencias;
-
-struct _Sugerencias{
-    char* palabra;
-    GList list;
-    unsigned cant_sug;
-    int cache;
-};
+#include "sugerencias.h"
 
 struct _Palabra{
     char* str;
@@ -69,16 +59,6 @@ Sugerencias palabra_cambiar_caracter(Palabra palabra, TablaHash tabla,
 
 Sugerencias palabra_agregar_caracter(Palabra palabra, TablaHash tabla,
                                     Sugerencias sug, GList* not, TablaHash tne, int dist);
-
-Sugerencias crear_sugerencias(char* word, int cant_sug, int cache);
-
-void sugerencias_destruir(Sugerencias sug);
-
-void sugerencia_imprimir_palabra(Sugerencias sug);
-
-Sugerencias sugerencia_copia(Sugerencias sug);
-
-int sugerencia_comparar(Sugerencias sug1, Sugerencias sug2);
 
 
 #endif /* __PALABRA_H__ */

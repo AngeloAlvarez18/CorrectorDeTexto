@@ -1,10 +1,7 @@
 #ifndef __GLIST_H__
 #define __GLIST_H__
 
-typedef void (*FuncionDestructora)(void *dato);
-typedef void *(*FuncionCopia)(void *dato);
-typedef void (*FuncionVisitante)(void *dato);
-typedef int (*FuncionComparadora)(void* dato1, void* dato2);
+#include "common.h"
 
 typedef struct _GNode {
   void *data;
@@ -32,12 +29,12 @@ int glist_vacia(GList lista);
 /**
  * Agrega un elemento al inicio de la lista.
  */
-GList glist_agregar_inicio(GList lista, void *dato, FuncionCopia copy);
+GList glist_agregar_inicio(GList lista, void *dato, FuncionCopiadora copy);
 
 /**
  * Agrega un elemento al final de la lista.
 */
-GList glist_agregar_final(GList list, void *dato, FuncionCopia copy);
+GList glist_agregar_final(GList list, void *dato, FuncionCopiadora copy);
 
 /**
  * Recorrido de la lista, utilizando la funcion pasada.

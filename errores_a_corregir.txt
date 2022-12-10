@@ -1,4 +1,0 @@
-1: A veces imprime sugerencias vacias. 
-Ej: 
-Linea 3, a no esta en el diccionario.
-Quizas quiso decir: fa, ea, da, ca, , 

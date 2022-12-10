@@ -55,6 +55,9 @@ Quizas quiso decir: voluta tes, voluntades, voluta ates, volt pates, volita tes,
 Linea 1, sapiente no esta en el diccionario.
 Quizas quiso decir: saliente, asiente, sainete, api ente, aliente, 
 
+Linea 1, voluptatem no esta en el diccionario.
+Quizas quiso decir: voluta tea, voluta ten, voluta ter, voluta tes, voluta tex, 
+
 Linea 1, molestiae no esta en el diccionario.
 Quizas quiso decir: molestia, molestias, molestare, molestase, molestais, 
 
@@ -66,6 +69,9 @@ Quizas quiso decir: como di, comedi, comoda, comodo, comodin,
 
 Linea 1, veritatis no esta en el diccionario.
 Quizas quiso decir: vertiais, vertais, veriais, meritais, peritais, 
+
+Linea 1, velit no esta en el diccionario.
+Quizas quiso decir: velis, veliz, velite, verti, vesti, 
 
 Linea 1, aliquid no esta en el diccionario.
 Quizas quiso decir: ali quid, liquida, liquide, liquido, al quid, 
@@ -112,6 +118,9 @@ Quizas quiso decir: busto, fusto, gusto, justo, rusto,
 Linea 1, repellat no esta en el diccionario.
 Quizas quiso decir: repella, repellad, repellan, repellar, repellas, 
 
+Linea 1, sint no esta en el diccionario.
+Quizas quiso decir: sin, sant, sino, sian, sien, 
+
 Linea 1, asperiores no esta en el diccionario.
 Quizas quiso decir: aspersores, superiores, ase priores, aspero ires, aserio res, 
 
@@ -120,4 +129,7 @@ Quizas quiso decir: dolor bus, colori bus, dolora bus, dolo rebus, dolor obus,
 
 Linea 1, ab no esta en el diccionario.
 Quizas quiso decir: ad, ah, aj, al, ar, 
+
+Linea 1, voluptates no esta en el diccionario.
+Quizas quiso decir: voluta tes, voluntades, voluta ates, volt pates, volita tes, 
 

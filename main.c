@@ -1,9 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <assert.h>
-#include <string.h>
 #include "tablahash.h"
-#include "glist.h"
 #include "utils.h"
 #include "palabra.h"
 
@@ -26,7 +22,7 @@ int main(int argc, char** argv) {
   TablaHash tabla = tablahash_crear(CAPACIDAD_INICIAL,
                   (FuncionComparadora) palabra_comparar, 
                   (FuncionDestructora) palabra_destruir,
-                  (FuncionHash) djb2, (FuncionCopia) palabra_copia);
+                  (FuncionHash) djb2, (FuncionCopiadora) palabra_copia);
 
 
   // Leemos el diccionario y lo guardamos en la tabla creada.

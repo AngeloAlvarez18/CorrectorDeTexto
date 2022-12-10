@@ -1,24 +1,35 @@
+# Makefile para Corrector de Texto
+
+# Compilador y banderas
 CC = gcc
 FLAGS = -Wall -Werror -Wextra -std=c99
 
-main: main.o tablahash_d.o utils.o glist.o palabra.o
-	$(CC) -g -o main main.o tablahash_d.o utils.o glist.o palabra.o $(FLAGS)
+# Archivos fuente
+MAIN = main
+GLIST = glist
+PALABRA = palabra
+SUGERENCIAS = sugerencias
+TABLAHASH = tablahash_d
+UTILS = utils
 
-main.o: main.c tablahash.h glist.h palabra.h utils.h
-	$(CC) -g -c main.c $(FLAGS)
+SOURCE = $(UTILS).o 
+ESTRUCTURAS = $(GLIST).o $(PALABRA).o $(TABLAHASH).o $(SUGERENCIAS).o
 
-tablahash_d.o: tablahash_d.c glist.h palabra.h utils.h
-	$(CC) -g -c tablahash_d.c $(FLAGS)
+# Compilar el programa
+all: $(MAIN).o $(SOURCE) $(ESTRUCTURAS)
+	$(CC) $(FLAGS) $^ -o main
 
-utils.o: utils.c palabra.h tablahash.h
-	$(CC) -g -c utils.c $(FLAGS)
 
-glist.o: glist.c
-	$(CC) -g -c glist.c $(FLAGS)
+# Crear .o desde archivos .c
+%.o: %.c
+	$(CC) -c $(CFLAGS) $^ -o $@
 
-palabra.o: palabra.c tablahash.h
-	$(CC) -g -c palabra.c $(FLAGS)
+# Compilar para depuracion
+.PHONY: debug
+debug: $(CC) -g -o main $(FLAGS) $(MAIN).c $(GLIST).c $(PALABRA).c \
+	   $(SUGERENCIAS).c $(TABLAHASH).c $(UTILS).c
 
+# Remover archivos .o
 .PHONY: clean
 clean:
 	rm *.o

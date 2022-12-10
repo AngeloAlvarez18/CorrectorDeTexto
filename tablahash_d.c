@@ -1,11 +1,7 @@
 #include <stdlib.h>
 #include <assert.h>
-#include <stdio.h>
-#include <string.h>
 #include "tablahash.h"
 #include "glist.h"
-#include "utils.h"
-#include "palabra.h"
 
 
 /**
@@ -92,7 +88,7 @@ void tablahash_insertar(TablaHash tabla, void *dato) {
 int tablahash_buscar(TablaHash tabla, void *dato) {
 
   // Calculamos la posicion del dato dado, de acuerdo a la funcion hash.
-  unsigned idx = djb2(dato) % tabla->capacidad;
+  unsigned idx = tabla->hash(dato) % tabla->capacidad;
   
   // Retornar NULL si la casilla estaba vacia.
   return glist_buscar(tabla->elems[idx],dato, 
@@ -115,7 +111,7 @@ void tablahash_eliminar(TablaHash tabla, void *dato) {
   else if (glist_buscar(tabla->elems[idx],dato,(FuncionComparadora)tabla->comp)) {
     tabla->numElems--;
     tabla->elems[idx] = glist_eliminar(tabla->elems[idx], dato,
-    (FuncionDestructora) palabra_destruir, (FuncionComparadora) tabla->comp);
+    (FuncionDestructora) tabla->destr, (FuncionComparadora) tabla->comp);
     return;
   }
   else{
@@ -123,14 +119,14 @@ void tablahash_eliminar(TablaHash tabla, void *dato) {
   }
 }
 
-void tablahash_imprimir(TablaHash tabla, FuncionVisitante visit){
-  for(unsigned idx = 0; idx < tabla->capacidad; idx++){
-    printf("Casilla %d: ", idx);
-    glist_recorrer(tabla->elems[idx],visit);
-    printf("\n");
-  }
-  return;
-}
+// void tablahash_imprimir(TablaHash tabla, FuncionVisitante visit){
+//   for(unsigned idx = 0; idx < tabla->capacidad; idx++){
+//     printf("Casilla %d: ", idx);
+//     glist_recorrer(tabla->elems[idx],visit);
+//     printf("\n");
+//   }
+//   return;
+// }
 
 void tablahash_redimensionar(TablaHash tabla) {
   GList* tmp_elems = tabla->elems;
