@@ -79,7 +79,7 @@ void tablahash_insertar(TablaHash tabla, void *dato) {
   // En caso contrario, la agrega a la tabla
   else{
     tabla->numElems++;
-    tabla->elems[idx] = glist_agregar_inicio(tabla->elems[idx], dato,(FuncionCopiadora) tabla->copia);
+    tabla->elems[idx] = glist_agregar_final(tabla->elems[idx], dato,(FuncionCopiadora) tabla->copia);
     return;
   }
 }

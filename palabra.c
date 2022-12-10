@@ -67,7 +67,7 @@ Sugerencias palabra_dividir(Palabra palabra, TablaHash tabla, Sugerencias sug){
             buff1[i] = ' ';
             memcpy(buff1 + i + 1, buff2, palabra->len - i + 1);
             word = palabra_crear(buff1, palabra->len + 1);
-            sug->list = glist_agregar_inicio(sug->list, word, tabla->copia);
+            sug->list = glist_agregar_final(sug->list, word, tabla->copia);
             sug->cant_sug++;
             palabra_destruir(word);                
         }
@@ -97,12 +97,12 @@ Sugerencias palabra_permutar(Palabra palabra, TablaHash tabla, Sugerencias sug,
       palabra->str[i-1] = palabra->str[i];
       palabra->str[i] = aux;
       if (tablahash_buscar(tabla, palabra) && !glist_buscar(sug->list,palabra,tabla->comp)){
-        sug->list = glist_agregar_inicio(sug->list, palabra, (FuncionCopia)palabra_copia);
+        sug->list = glist_agregar_final(sug->list, palabra, (FuncionCopia)palabra_copia);
         sug->cant_sug++;
       }
 
       if((dist < 3) && !tablahash_buscar(tne, palabra)){
-        *not_found = glist_agregar_inicio(*not_found, palabra, tabla->copia);
+        *not_found = glist_agregar_final(*not_found, palabra, tabla->copia);
         tablahash_insertar(tne, palabra);
       }
       
@@ -127,12 +127,12 @@ Sugerencias palabra_borrar_caracter(Palabra palabra, TablaHash tabla, Sugerencia
         memcpy(buff + i, palabra->str + i + 1, palabra->len - i);
         word = palabra_crear(buff, palabra->len - 1);
         if (tablahash_buscar(tabla, word) && !glist_buscar(sug->list,word,tabla->comp)){
-            sug->list = glist_agregar_inicio(sug->list, word, tabla->copia);
+            sug->list = glist_agregar_final(sug->list, word, tabla->copia);
             sug->cant_sug++;
         }
 
         if((dist < 3) && !tablahash_buscar(tne, palabra)){
-            *not = glist_agregar_inicio(*not, word, tabla->copia);
+            *not = glist_agregar_final(*not, word, tabla->copia);
             tablahash_insertar(tne, word);
         }
         palabra_destruir(word);
@@ -155,12 +155,12 @@ Sugerencias palabra_cambiar_caracter(Palabra palabra, TablaHash tabla, Sugerenci
     for(char c = 'a'; c <= 'z'; c++){
       palabra->str[i] = c;
       if(tablahash_buscar(tabla, palabra) && !glist_buscar(sug->list,palabra,tabla->comp)){
-        sug->list = glist_agregar_inicio(sug->list, palabra, (FuncionCopia)palabra_copia);
+        sug->list = glist_agregar_final(sug->list, palabra, (FuncionCopia)palabra_copia);
         sug->cant_sug++;
       }
       
       if((dist < 3) && !tablahash_buscar(tne, palabra)) {
-        *not = glist_agregar_inicio(*not, palabra, tabla->copia);
+        *not = glist_agregar_final(*not, palabra, tabla->copia);
         tablahash_insertar(tne, palabra);
       }
 
@@ -186,12 +186,12 @@ Sugerencias palabra_agregar_caracter(Palabra palabra, TablaHash tabla, Sugerenci
             memcpy(buff + i + 1, palabra->str + i, palabra->len - i + 1);
             word = palabra_crear(buff, palabra->len + 1);
             if (tablahash_buscar(tabla, word) && !glist_buscar(sug->list,word,tabla->comp)){
-                sug->list = glist_agregar_inicio(sug->list, word, tabla->copia);
+                sug->list = glist_agregar_final(sug->list, word, tabla->copia);
                 sug->cant_sug++;
             }          
             
             if((dist < 3) && !tablahash_buscar(tne, palabra)){
-                *not = glist_agregar_inicio(*not, word, tabla->copia);
+                *not = glist_agregar_final(*not, word, tabla->copia);
                 tablahash_insertar(tne, word);
             }
             
@@ -236,6 +236,6 @@ int sugerencia_comparar(Sugerencias sug1, Sugerencias sug2){
 Sugerencias sugerencia_copia(Sugerencias sug){
   Sugerencias sug_copia = crear_sugerencias(sug->palabra, sug->cant_sug, sug->cache);
   for (GList node = sug->list; node != NULL; node = node->next)
-    sug_copia->list = glist_agregar_inicio(sug_copia->list,node->data,(FuncionCopia)palabra_copia);
+    sug_copia->list = glist_agregar_final(sug_copia->list,node->data,(FuncionCopia)palabra_copia);
   return sug_copia;
 }

@@ -9,6 +9,7 @@ typedef int (*FuncionComparadora)(void* dato1, void* dato2);
 typedef struct _GNode {
   void *data;
   struct _GNode *next;
+  struct _GNode *ult;
 } GNode;
 
 typedef GNode *GList;
@@ -32,6 +33,11 @@ int glist_vacia(GList lista);
  * Agrega un elemento al inicio de la lista.
  */
 GList glist_agregar_inicio(GList lista, void *dato, FuncionCopia copy);
+
+/**
+ * Agrega un elemento al final de la lista.
+*/
+GList glist_agregar_final(GList list, void *dato, FuncionCopia copy);
 
 /**
  * Recorrido de la lista, utilizando la funcion pasada.

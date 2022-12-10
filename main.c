@@ -10,28 +10,34 @@
 /** Capacidad inicial para la tabla hash */
 #define CAPACIDAD_INICIAL 20
 
-int main() {
+int main(int argc, char** argv) {
   
-  // Diccionario que usaremos
-  char* dicc = "diccionario.txt";
+  // Chequeamos que se hayan pasado la cantidad 
+  // de argumentos correctos.
+  if (argc != 4)
+    error();
+  
+  // Diccionario que usaremos.
+  char dicc[30];
+  printf("Ingrese el diccionario: ");
+  scanf("%s", dicc);
 
-  //Iniciar tabla hash
+  //Iniciar tabla hash.
   TablaHash tabla = tablahash_crear(CAPACIDAD_INICIAL,
                   (FuncionComparadora) palabra_comparar, 
                   (FuncionDestructora) palabra_destruir,
                   (FuncionHash) djb2, (FuncionCopia) palabra_copia);
 
-  // Leemos el diccionario y lo guardamos en la tabla
+
+  // Leemos el diccionario y lo guardamos en la tabla creada.
   leer_diccionario(dicc, tabla);
 
-  readfile2("test.txt", "salida.txt",tabla);
+  // Leemos y corregimos las palabras que no estan el diccionario
+  // del archivo de entrada.
+  leer_y_corregir(argv[1], argv[2], argv[3], tabla);
 
   //Liberar memoria
   tablahash_destruir(tabla);
-  // TablaHash tabla;
-  // FILE* cache = fopen("cache.txt", "r");
-  // tabla = leer_cache(cache);
-  // tablahash_imprimir(tabla, (FuncionVisitante)sugerencia_imprimir_palabra);
-  // fclose(cache);
+  
   return 0;
 }
