@@ -42,7 +42,7 @@ int palabra_comparar(Palabra palabra1, Palabra palabra2) {
   return strcmp(palabra1->str, palabra2->str);
 }
 
-Sugerencias palabra_dividir(Palabra palabra, TablaHash tabla, Sugerencias sug) {
+void palabra_dividir(Palabra palabra, TablaHash tabla, Sugerencias sug) {
   char *buff1 = malloc(sizeof(char) * (palabra->len + 2));
   assert(buff1 != NULL);
   char *buff2 = malloc(sizeof(char) * palabra->len);
@@ -73,16 +73,16 @@ Sugerencias palabra_dividir(Palabra palabra, TablaHash tabla, Sugerencias sug) {
     if (sug->cant_sug >= 5) {
       free(buff1);
       free(buff2);
-      return sug;
+      return;
     }
   }
 
   free(buff1);
   free(buff2);
-  return sug;
+  return;
 }
 
-Sugerencias palabra_permutar(Palabra palabra, TablaHash tabla, Sugerencias sug,
+void palabra_permutar(Palabra palabra, TablaHash tabla, Sugerencias sug,
                              GList * not_found, TablaHash tne, int dist) {
   char aux;
 
@@ -107,15 +107,15 @@ Sugerencias palabra_permutar(Palabra palabra, TablaHash tabla, Sugerencias sug,
       palabra->str[i] = palabra->str[i - 1];
       palabra->str[i - 1] = aux;
       if (sug->cant_sug >= 5)
-        return sug;
+        return;
     }
   }
 
-  return sug;
+  return;
 }
 
 
-Sugerencias palabra_borrar_caracter(Palabra palabra, TablaHash tabla,
+void palabra_borrar_caracter(Palabra palabra, TablaHash tabla,
                                     Sugerencias sug, GList * not, TablaHash tne,
                                     int dist) {
   char *buff = malloc(sizeof(char) * palabra->len);
@@ -140,15 +140,15 @@ Sugerencias palabra_borrar_caracter(Palabra palabra, TablaHash tabla,
 
     if (sug->cant_sug >= 5) {
       free(buff);
-      return sug;
+      return;
     }
   }
   free(buff);
-  return sug;
+  return;
 }
 
-Sugerencias palabra_cambiar_caracter(Palabra palabra, TablaHash tabla,
-                                     Sugerencias sug, GList * not,
+void palabra_cambiar_caracter(Palabra palabra, TablaHash tabla,
+                                     Sugerencias sug, GList *not,
                                      TablaHash tne, int dist) {
   char aux;
 
@@ -170,15 +170,15 @@ Sugerencias palabra_cambiar_caracter(Palabra palabra, TablaHash tabla,
 
       if (sug->cant_sug >= 5) {
         palabra->str[i] = aux;
-        return sug;
+        return;
       }
     }
     palabra->str[i] = aux;
   }
-  return sug;
+  return;
 }
 
-Sugerencias palabra_agregar_caracter(Palabra palabra, TablaHash tabla,
+void palabra_agregar_caracter(Palabra palabra, TablaHash tabla,
                                      Sugerencias sug, GList * not,
                                      TablaHash tne, int dist) {
   char *buff = malloc(sizeof(char) * (palabra->len + 2));
@@ -205,10 +205,10 @@ Sugerencias palabra_agregar_caracter(Palabra palabra, TablaHash tabla,
       palabra_destruir(word);
       if (sug->cant_sug >= 5) {
         free(buff);
-        return sug;
+        return;
       }
     }
   }
   free(buff);
-  return sug;
+  return;
 }

@@ -44,21 +44,21 @@ int palabra_comparar(Palabra palabra1, Palabra palabra2);
 /**
  * Toma una palabra y la divide en dos palabras
 */
-Sugerencias palabra_dividir(Palabra palabra, TablaHash tabla, Sugerencias sug);
+void palabra_dividir(Palabra palabra, TablaHash tabla, Sugerencias sug);
 
 /**
  * Toma una palabra y permuta todas los caracteres adyacentes
 */
-Sugerencias palabra_permutar(Palabra palabra, TablaHash tabla, Sugerencias sug,
+void palabra_permutar(Palabra palabra, TablaHash tabla, Sugerencias sug,
                             GList* not_found, TablaHash tne, int dist);
 
-Sugerencias palabra_borrar_caracter(Palabra palabra, TablaHash tabla,
+void palabra_borrar_caracter(Palabra palabra, TablaHash tabla,
                                     Sugerencias sug, GList* not, TablaHash tne, int dist);
 
-Sugerencias palabra_cambiar_caracter(Palabra palabra, TablaHash tabla,
+void palabra_cambiar_caracter(Palabra palabra, TablaHash tabla,
                                     Sugerencias sug, GList* not, TablaHash tne, int dist);
 
-Sugerencias palabra_agregar_caracter(Palabra palabra, TablaHash tabla,
+void palabra_agregar_caracter(Palabra palabra, TablaHash tabla,
                                     Sugerencias sug, GList* not, TablaHash tne, int dist);
 
 

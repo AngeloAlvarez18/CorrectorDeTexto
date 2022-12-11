@@ -28,33 +28,33 @@ unsigned djb2_sug(Sugerencias sug) {
   return hash;
 }
 
-Sugerencias distancia_n(Palabra palabra, TablaHash tabla, Sugerencias sug,
+void distancia_n(Palabra palabra, TablaHash tabla, Sugerencias sug,
                         GList * no_encontradas, TablaHash tne, int dist) {
 
   if (sug->cant_sug < 5)
-    sug = palabra_dividir(palabra, tabla, sug);
+    palabra_dividir(palabra, tabla, sug);
 
   if (sug->cant_sug < 5)
-    sug = palabra_permutar(palabra, tabla, sug, no_encontradas, tne, dist);
+    palabra_permutar(palabra, tabla, sug, no_encontradas, tne, dist);
 
   if (sug->cant_sug < 5)
-    sug = palabra_borrar_caracter(palabra, tabla, sug, no_encontradas,
+    palabra_borrar_caracter(palabra, tabla, sug, no_encontradas,
                                   tne, dist);
 
   if (sug->cant_sug < 5)
-    sug = palabra_cambiar_caracter(palabra, tabla, sug, no_encontradas, tne,
+    palabra_cambiar_caracter(palabra, tabla, sug, no_encontradas, tne,
                                   dist);
 
   if (sug->cant_sug < 5)
-    sug = palabra_agregar_caracter(palabra, tabla, sug, no_encontradas, tne,
+    palabra_agregar_caracter(palabra, tabla, sug, no_encontradas, tne,
                                    dist);
 
-  return sug;
+  return;
 
 }
 
-Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla, Sugerencias sug,
-                                TablaHash chequeadas, char* cache) {
+Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla,
+                              TablaHash chequeadas, char* cache) {
 
   // Lista en la que guardaremos palabras a las cuales se les aplicará 
   // las reglas 2 y 3 en caso de ser necesario
@@ -67,9 +67,10 @@ Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla, Sugerencias sug
                                   (FuncionHash) djb2,
                                   (FuncionCopiadora)palabra_copia);
 
+  Sugerencias sug = crear_sugerencias(palabra->str, 0, 0);
   int bandera = 1, dist = 1;
   // Buscamos sugerencias a distancia 1
-  sug = distancia_n(palabra, tabla, sug, &no_encontradas, tabla_no_encontradas,
+  distancia_n(palabra, tabla, sug, &no_encontradas, tabla_no_encontradas,
                     dist);
   dist++;
 
@@ -82,7 +83,7 @@ Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla, Sugerencias sug
     while (bandera && dist <= 3) {
       no_encontradas2 = glist_crear();
       for (GList node = no_encontradas; node != NULL && sug->cant_sug < 5;) {
-        sug = distancia_n(node->data, tabla, sug, &no_encontradas2,
+        distancia_n(node->data, tabla, sug, &no_encontradas2,
                           tabla_no_encontradas, dist);
         node = node->next;
       }
@@ -95,7 +96,7 @@ Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla, Sugerencias sug
     }
   }
   
-  escribir_cache(cache, palabra->str, sug->cant_sug, sug->list);
+  escribir_cache(cache, sug);
 
   tablahash_insertar(chequeadas, sug);
   glist_destruir(no_encontradas, tabla->destr);

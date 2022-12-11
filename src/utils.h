@@ -19,14 +19,14 @@ unsigned djb2_sug(Sugerencias sug);
  * Mientras no se haya encontrado 5 sugerencias para la palabra pasada,
  * aplica las reglas de correcion a la palabra.
 */
-Sugerencias distancia_n(Palabra palabra, TablaHash tabla, Sugerencias sug,
+void distancia_n(Palabra palabra, TablaHash tabla, Sugerencias sug,
                         GList* no_encontradas, TablaHash tne, int dist);
 
 /**
  * Busca posibles sugerencias para la palabra pasada.
 */
-Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla, Sugerencias sug,
-                                TablaHash chequeadas, char* cache);
+Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla,
+                               TablaHash chequeadas, char* cache);
 
 /**
  * Se fija si una palabra esta en la tabla hash de cache, en caso

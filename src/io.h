@@ -30,7 +30,7 @@ void leer_cache(FILE* archivo, TablaHash cache);
 /**
  * Lee el archivo de cache y guardas las palabras con sus sugerencias.
 */
-void escribir_cache(char* arch, char* palabra, int cant_sugs, GList list);
+void escribir_cache(char* arch, Sugerencias sug);
 
 /**
  * Escribe las palabras no encontradas en el diciconario con sus 

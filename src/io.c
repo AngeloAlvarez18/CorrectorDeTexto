@@ -63,13 +63,12 @@ void leer_y_corregir(char *entrada, char *salida, char *cache,TablaHash tabla) {
 
   while (flag) {
     palabra = leer_palabra(arch_entrada, &linea, &flag);
-    // Creamos una sugerencia, para posteriormente poder 
-    // fijarnos si la palabra esta en el cache o si ya la corregimos.
-    sugerencias = crear_sugerencias(palabra->str,0,0);
 
     // Nos fijamos si la palabra no esta en el diccionario
     if (!tablahash_buscar(tabla, palabra)){
-                                                                                   
+      // Creamos una sugerencia, para posteriormente poder 
+      // fijarnos si la palabra esta en el cache o si ya la corregimos.
+      sugerencias = crear_sugerencias(palabra->str,0,0);                                                                                   
       // Nos fijamos si ya chequeamos la palabra
       if (tablahash_buscar(chequeadas,sugerencias)){
         sugerencias = buscar_en_cache(chequeadas, sugerencias);
@@ -80,9 +79,11 @@ void leer_y_corregir(char *entrada, char *salida, char *cache,TablaHash tabla) {
       }
       // La palabra no la chequeamos, le buscamos sugerencias
       else{
-      sugerencias = buscar_sugerencias(palabra, tabla, sugerencias,
+      sugerencias_destruir(sugerencias);
+      sugerencias = buscar_sugerencias(palabra, tabla,
                                       chequeadas, cache);
       escribir_sugerencias(arch_salida, sugerencias,linea);
+      sugerencias_destruir(sugerencias);
       }
     }
     palabra_destruir(palabra);
@@ -194,24 +195,25 @@ void leer_cache(FILE * archivo, TablaHash cache) {
 }
 
 
-void escribir_cache(char* arch, char *palabra, int cant_sugs, GList list) {
+void escribir_cache(char* arch, Sugerencias sug) {
   FILE* arch_cache = fopen(arch, "a");
   if (arch_cache == NULL)
     quit("escribir_cache.fopen");
 
-  if (cant_sugs == 0) {
-    fprintf(arch_cache, "%s, ", palabra);
-    fprintf(arch_cache, "%d, \n", cant_sugs);
+  if (sug->cant_sug == 0) {
+    fprintf(arch_cache, "%s, ", sug->palabra);
+    fprintf(arch_cache, "%d, \n", sug->cant_sug);
     return;
   }
 
-  fprintf(arch_cache, "%s, ", palabra);
-  fprintf(arch_cache, "%d, ", cant_sugs);
+  fprintf(arch_cache, "%s, ", sug->palabra);
+  fprintf(arch_cache, "%d, ", sug->cant_sug);
 
-  for (GList node = list; node != NULL; node = node->next)
+  for (GList node = sug->list; node != NULL; node = node->next)
     fprintf(arch_cache, "%s, ", ((Palabra) (node->data))->str);
   
   fprintf(arch_cache, "\n");
+  fclose(arch_cache);
   return;
 }
 
