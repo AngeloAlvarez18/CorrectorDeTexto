@@ -1,135 +1,486 @@
-Linea 1, lorem no esta en el diccionario.
-Quizas quiso decir: lorea, loree, loreo, lores, forme, 
+Linea 1, low no esta en el diccionario.
+Quizas quiso decir: lo, loa, loe, loo, los, 
 
-Linea 1, ipsum no esta en el diccionario.
-Quizas quiso decir: pum, ipsi, insuma, insume, insumi, 
+Linea 1, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
 
-Linea 1, sit no esta en el diccionario.
-Quizas quiso decir: si, bit, set, sic, sij, 
+Linea 1, flows no esta en el diccionario.
+Quizas quiso decir: fleos, los, loas, loes, feos, 
 
-Linea 1, amet no esta en el diccionario.
-Quizas quiso decir: ame, amel, amen, ames, mate, 
+Linea 2, raps no esta en el diccionario.
+Quizas quiso decir: ras, gaps, reps, raes, rapa, 
 
-Linea 1, consectetur no esta en el diccionario.
-Quizas quiso decir: conecte jur, conecte mur, conecte sur, conecte ter, conecte tui, 
-
-Linea 1, adipisicing no esta en el diccionario.
+Linea 2, soundtrack no esta en el diccionario.
 No se encontraron sugerencias para esta palabra
 
-Linea 1, elit no esta en el diccionario.
-Quizas quiso decir: elite, lei, leia, el ti, bit, 
+Linea 2, of no esta en el diccionario.
+Quizas quiso decir: fo, uf, oa, oc, oh, 
 
-Linea 1, voluptatem no esta en el diccionario.
-Quizas quiso decir: voluta tea, voluta ten, voluta ter, voluta tes, voluta tex, 
+Linea 2, my no esta en el diccionario.
+Quizas quiso decir: ay, me, mi, mu, muy, 
 
-Linea 1, velit no esta en el diccionario.
-Quizas quiso decir: velis, veliz, velite, verti, vesti, 
+Linea 3, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
 
-Linea 1, aliquam no esta en el diccionario.
-Quizas quiso decir: aljuma, ali cuma, ali duma, ali fuma, ali huma, 
+Linea 3, low no esta en el diccionario.
+Quizas quiso decir: lo, loa, loe, loo, los, 
 
-Linea 1, iure no esta en el diccionario.
-Quizas quiso decir: ire, cure, dure, jure, mure, 
+Linea 3, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
 
-Linea 1, nulla no esta en el diccionario.
-Quizas quiso decir: nula, aulla, bulla, fulla, hulla, 
+Linea 3, flows no esta en el diccionario.
+Quizas quiso decir: fleos, los, loas, loes, feos, 
 
-Linea 1, totam no esta en el diccionario.
-Quizas quiso decir: totem, total, toma, totuma, otar, 
+Linea 4, raps no esta en el diccionario.
+Quizas quiso decir: ras, gaps, reps, raes, rapa, 
 
-Linea 1, optio no esta en el diccionario.
-Quizas quiso decir: opio, opto, optico, optimo, poto, 
+Linea 4, spit no esta en el diccionario.
+Quizas quiso decir: spot, psi, sipe, pi, bit, 
 
-Linea 1, illo no esta en el diccionario.
-Quizas quiso decir: lilo, ello, ileo, aillo, fillo, 
+Linea 4, the no esta en el diccionario.
+Quizas quiso decir: he, te, ahe, che, toe, 
 
-Linea 1, sint no esta en el diccionario.
-Quizas quiso decir: sin, sant, sino, sian, sien, 
+Linea 4, shit no esta en el diccionario.
+Quizas quiso decir: hi, bit, hin, hita, hite, 
 
-Linea 1, reiciendis no esta en el diccionario.
-Quizas quiso decir: rescindis, enciendas, enciendes, escindis, remiendas, 
+Linea 4, on no esta en el diccionario.
+Quizas quiso decir: no, en, in, un, oa, 
 
-Linea 1, voluptates no esta en el diccionario.
-Quizas quiso decir: voluta tes, voluntades, voluta ates, volt pates, volita tes, 
+Linea 4, the no esta en el diccionario.
+Quizas quiso decir: he, te, ahe, che, toe, 
 
-Linea 1, sapiente no esta en el diccionario.
-Quizas quiso decir: saliente, asiente, sainete, api ente, aliente, 
+Linea 4, mic no esta en el diccionario.
+Quizas quiso decir: mi, sic, tic, mia, mie, 
 
-Linea 1, voluptatem no esta en el diccionario.
-Quizas quiso decir: voluta tea, voluta ten, voluta ter, voluta tes, voluta tex, 
+Linea 4, low no esta en el diccionario.
+Quizas quiso decir: lo, loa, loe, loo, los, 
 
-Linea 1, molestiae no esta en el diccionario.
-Quizas quiso decir: molestia, molestias, molestare, molestase, molestais, 
+Linea 4, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
 
-Linea 1, inventore no esta en el diccionario.
-Quizas quiso decir: invento re, inventor, inventare, inventora, inventores, 
+Linea 4, flows no esta en el diccionario.
+Quizas quiso decir: fleos, los, loas, loes, feos, 
 
-Linea 1, commodi no esta en el diccionario.
-Quizas quiso decir: como di, comedi, comoda, comodo, comodin, 
+Linea 5, raps no esta en el diccionario.
+Quizas quiso decir: ras, gaps, reps, raes, rapa, 
 
-Linea 1, veritatis no esta en el diccionario.
-Quizas quiso decir: vertiais, vertais, veriais, meritais, peritais, 
+Linea 5, soundtrack no esta en el diccionario.
+No se encontraron sugerencias para esta palabra
 
-Linea 1, velit no esta en el diccionario.
-Quizas quiso decir: velis, veliz, velite, verti, vesti, 
+Linea 5, of no esta en el diccionario.
+Quizas quiso decir: fo, uf, oa, oc, oh, 
 
-Linea 1, aliquid no esta en el diccionario.
-Quizas quiso decir: ali quid, liquida, liquide, liquido, al quid, 
+Linea 5, my no esta en el diccionario.
+Quizas quiso decir: ay, me, mi, mu, muy, 
 
-Linea 1, ipsam no esta en el diccionario.
-Quizas quiso decir: pisa, pisad, pisan, pisar, pisas, 
+Linea 6, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
 
-Linea 1, corrupti no esta en el diccionario.
-Quizas quiso decir: corrupta, corrupto, corrupia, cor rusti, corruptas, 
+Linea 6, low no esta en el diccionario.
+Quizas quiso decir: lo, loa, loe, loo, los, 
 
-Linea 1, nihil no esta en el diccionario.
-Quizas quiso decir: ipil, iril, ixil, nial, niel, 
+Linea 6, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
 
-Linea 1, architecto no esta en el diccionario.
-Quizas quiso decir: archi teto, arquitecto, archi pecto, archi recto, archi tacto, 
+Linea 6, flows no esta en el diccionario.
+Quizas quiso decir: fleos, los, loas, loes, feos, 
 
-Linea 1, unde no esta en el diccionario.
-Quizas quiso decir: un de, une, ande, ende, onde, 
+Linea 7, raps no esta en el diccionario.
+Quizas quiso decir: ras, gaps, reps, raes, rapa, 
 
-Linea 1, ipsa no esta en el diccionario.
-Quizas quiso decir: pisa, isa, ipsi, pias, pia, 
+Linea 7, spit no esta en el diccionario.
+Quizas quiso decir: spot, psi, sipe, pi, bit, 
 
-Linea 1, consequatur no esta en el diccionario.
-Quizas quiso decir: cose quater, monse quater, canse quater, cense quater, corse quater, 
+Linea 7, the no esta en el diccionario.
+Quizas quiso decir: he, te, ahe, che, toe, 
 
-Linea 1, excepturi no esta en el diccionario.
-Quizas quiso decir: exceptuar, exceptua, exceptue, exceptuo, exceptar, 
+Linea 7, shit no esta en el diccionario.
+Quizas quiso decir: hi, bit, hin, hita, hite, 
 
-Linea 1, numquam no esta en el diccionario.
-Quizas quiso decir: numular, numisma, nutual, rumrum, summum, 
+Linea 7, on no esta en el diccionario.
+Quizas quiso decir: no, en, in, un, oa, 
 
-Linea 1, incidunt no esta en el diccionario.
-Quizas quiso decir: incidan, inciden, incidente, incidian, inciente, 
+Linea 7, the no esta en el diccionario.
+Quizas quiso decir: he, te, ahe, che, toe, 
 
-Linea 1, dolore no esta en el diccionario.
-Quizas quiso decir: dolo re, dolor, colore, dolare, dolere, 
+Linea 7, mic no esta en el diccionario.
+Quizas quiso decir: mi, sic, tic, mia, mie, 
 
-Linea 1, provident no esta en el diccionario.
-Quizas quiso decir: providente, proviene, previdente, provienen, provienes, 
+Linea 8, brapo no esta en el diccionario.
+Quizas quiso decir: rapo, grapo, trapo, braco, bramo, 
 
-Linea 1, iusto no esta en el diccionario.
-Quizas quiso decir: busto, fusto, gusto, justo, rusto, 
+Linea 8, give no esta en el diccionario.
+Quizas quiso decir: vive, gibe, gime, gire, avie, 
 
-Linea 1, repellat no esta en el diccionario.
-Quizas quiso decir: repella, repellad, repellan, repellar, repellas, 
+Linea 8, please no esta en el diccionario.
+Quizas quiso decir: ple ase, pelase, alease, olease, palease, 
 
-Linea 1, sint no esta en el diccionario.
-Quizas quiso decir: sin, sant, sino, sian, sien, 
+Linea 9, beats no esta en el diccionario.
+Quizas quiso decir: betas, beata, beato, beatas, beatos, 
 
-Linea 1, asperiores no esta en el diccionario.
-Quizas quiso decir: aspersores, superiores, ase priores, aspero ires, aserio res, 
+Linea 9, y no esta en el diccionario.
+Quizas quiso decir: ay, ya, ye, yo, ca, 
 
-Linea 1, doloribus no esta en el diccionario.
-Quizas quiso decir: dolor bus, colori bus, dolora bus, dolo rebus, dolor obus, 
+Linea 9, a no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
 
-Linea 1, ab no esta en el diccionario.
-Quizas quiso decir: ad, ah, aj, al, ar, 
+Linea 10, hits no esta en el diccionario.
+Quizas quiso decir: bits, hita, hite, hito, hitas, 
 
-Linea 1, voluptates no esta en el diccionario.
-Quizas quiso decir: voluta tes, voluntades, voluta ates, volt pates, volita tes, 
+Linea 10, kids no esta en el diccionario.
+Quizas quiso decir: id, ies, ida, ido, idas, 
+
+Linea 10, sit no esta en el diccionario.
+No se encontraron sugerencias para esta palabra
+
+Linea 11, down no esta en el diccionario.
+Quizas quiso decir: don, dona, dond, done, dono, 
+
+Linea 11, underground no esta en el diccionario.
+No se encontraron sugerencias para esta palabra
+
+Linea 12, ok no esta en el diccionario.
+Quizas quiso decir: oa, oc, oh, oi, os, 
+
+Linea 12, god no esta en el diccionario.
+Quizas quiso decir: yod, gol, goda, godo, oid, 
+
+Linea 12, damn no esta en el diccionario.
+Quizas quiso decir: dan, dama, adan, man, aman, 
+
+Linea 12, god no esta en el diccionario.
+Quizas quiso decir: yod, gol, goda, godo, oid, 
+
+Linea 13, damn no esta en el diccionario.
+Quizas quiso decir: dan, dama, adan, man, aman, 
+
+Linea 13, pa no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 13, hacerlo no esta en el diccionario.
+Quizas quiso decir: hacer lo, hace rol, acero, acerbo, acerco, 
+
+Linea 15, a no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 15, give no esta en el diccionario.
+Quizas quiso decir: vive, gibe, gime, gire, avie, 
+
+Linea 15, the no esta en el diccionario.
+Quizas quiso decir: he, te, ahe, che, toe, 
+
+Linea 15, shit no esta en el diccionario.
+Quizas quiso decir: hi, bit, hin, hita, hite, 
+
+Linea 15, flow no esta en el diccionario.
+Quizas quiso decir: flor, fleo, lo, loa, loe, 
+
+Linea 15, first no esta en el diccionario.
+Quizas quiso decir: frisa, frise, friso, fiats, fiat, 
+
+Linea 16, class no esta en el diccionario.
+Quizas quiso decir: clacs, clase, clases, calas, cales, 
+
+Linea 16, poli no esta en el diccionario.
+Quizas quiso decir: oli, boli, doli, loli, moli, 
+
+Linea 17, y no esta en el diccionario.
+Quizas quiso decir: ay, ya, ye, yo, ca, 
+
+Linea 18, sky no esta en el diccionario.
+Quizas quiso decir: soy, ay, se, si, so, 
+
+Linea 18, y no esta en el diccionario.
+Quizas quiso decir: ay, ya, ye, yo, ca, 
+
+Linea 19, a no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 20, f no esta en el diccionario.
+Quizas quiso decir: uf, fa, fe, fi, fo, 
+
+Linea 21, clmine no esta en el diccionario.
+Quizas quiso decir: camine, culmine, lamine, mine, amine, 
+
+Linea 22, a no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 23, low no esta en el diccionario.
+Quizas quiso decir: lo, loa, loe, loo, los, 
+
+Linea 24, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
+
+Linea 25, y no esta en el diccionario.
+Quizas quiso decir: ay, ya, ye, yo, ca, 
+
+Linea 27, eyou no esta en el diccionario.
+Quizas quiso decir: ecuo, yo, bou, yod, yos, 
+
+Linea 27, e no esta en el diccionario.
+Quizas quiso decir: be, ce, de, fe, ge, 
+
+Linea 28, rapper no esta en el diccionario.
+Quizas quiso decir: rapare, raer, rape, rapar, rapen, 
+
+Linea 29, soando no esta en el diccionario.
+Quizas quiso decir: so ando, osando, sonado, sondo, loando, 
+
+Linea 29, like no esta en el diccionario.
+Quizas quiso decir: lie, libe, lije, lime, lite, 
+
+Linea 29, dre no esta en el diccionario.
+Quizas quiso decir: re, de, are, ere, ire, 
+
+Linea 29, y no esta en el diccionario.
+Quizas quiso decir: ay, ya, ye, yo, ca, 
+
+Linea 29, pa no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 30, family no esta en el diccionario.
+Quizas quiso decir: fa mil, damil, tamil, facil, camilo, 
+
+Linea 30, low no esta en el diccionario.
+Quizas quiso decir: lo, loa, loe, loo, los, 
+
+Linea 30, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
+
+Linea 30, flows no esta en el diccionario.
+Quizas quiso decir: fleos, los, loas, loes, feos, 
+
+Linea 31, raps no esta en el diccionario.
+Quizas quiso decir: ras, gaps, reps, raes, rapa, 
+
+Linea 31, soundtrack no esta en el diccionario.
+No se encontraron sugerencias para esta palabra
+
+Linea 31, of no esta en el diccionario.
+Quizas quiso decir: fo, uf, oa, oc, oh, 
+
+Linea 31, my no esta en el diccionario.
+Quizas quiso decir: ay, me, mi, mu, muy, 
+
+Linea 32, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
+
+Linea 32, low no esta en el diccionario.
+Quizas quiso decir: lo, loa, loe, loo, los, 
+
+Linea 32, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
+
+Linea 32, flows no esta en el diccionario.
+Quizas quiso decir: fleos, los, loas, loes, feos, 
+
+Linea 33, raps no esta en el diccionario.
+Quizas quiso decir: ras, gaps, reps, raes, rapa, 
+
+Linea 33, spit no esta en el diccionario.
+Quizas quiso decir: spot, psi, sipe, pi, bit, 
+
+Linea 33, the no esta en el diccionario.
+Quizas quiso decir: he, te, ahe, che, toe, 
+
+Linea 33, shit no esta en el diccionario.
+Quizas quiso decir: hi, bit, hin, hita, hite, 
+
+Linea 33, on no esta en el diccionario.
+Quizas quiso decir: no, en, in, un, oa, 
+
+Linea 33, the no esta en el diccionario.
+Quizas quiso decir: he, te, ahe, che, toe, 
+
+Linea 33, mic no esta en el diccionario.
+Quizas quiso decir: mi, sic, tic, mia, mie, 
+
+Linea 33, low no esta en el diccionario.
+Quizas quiso decir: lo, loa, loe, loo, los, 
+
+Linea 33, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
+
+Linea 33, flows no esta en el diccionario.
+Quizas quiso decir: fleos, los, loas, loes, feos, 
+
+Linea 34, raps no esta en el diccionario.
+Quizas quiso decir: ras, gaps, reps, raes, rapa, 
+
+Linea 34, soundtrack no esta en el diccionario.
+No se encontraron sugerencias para esta palabra
+
+Linea 34, of no esta en el diccionario.
+Quizas quiso decir: fo, uf, oa, oc, oh, 
+
+Linea 34, my no esta en el diccionario.
+Quizas quiso decir: ay, me, mi, mu, muy, 
+
+Linea 35, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
+
+Linea 35, low no esta en el diccionario.
+Quizas quiso decir: lo, loa, loe, loo, los, 
+
+Linea 35, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
+
+Linea 35, flows no esta en el diccionario.
+Quizas quiso decir: fleos, los, loas, loes, feos, 
+
+Linea 36, raps no esta en el diccionario.
+Quizas quiso decir: ras, gaps, reps, raes, rapa, 
+
+Linea 36, spit no esta en el diccionario.
+Quizas quiso decir: spot, psi, sipe, pi, bit, 
+
+Linea 36, the no esta en el diccionario.
+Quizas quiso decir: he, te, ahe, che, toe, 
+
+Linea 36, shit no esta en el diccionario.
+Quizas quiso decir: hi, bit, hin, hita, hite, 
+
+Linea 36, on no esta en el diccionario.
+Quizas quiso decir: no, en, in, un, oa, 
+
+Linea 36, the no esta en el diccionario.
+Quizas quiso decir: he, te, ahe, che, toe, 
+
+Linea 36, mic no esta en el diccionario.
+Quizas quiso decir: mi, sic, tic, mia, mie, 
+
+Linea 37, bro no esta en el diccionario.
+Quizas quiso decir: ro, aro, ero, gro, oro, 
+
+Linea 37, gat no esta en el diccionario.
+Quizas quiso decir: gag, gal, gap, gas, gay, 
+
+Linea 37, damn no esta en el diccionario.
+Quizas quiso decir: dan, dama, adan, man, aman, 
+
+Linea 37, gat no esta en el diccionario.
+Quizas quiso decir: gag, gal, gap, gas, gay, 
+
+Linea 38, damn no esta en el diccionario.
+Quizas quiso decir: dan, dama, adan, man, aman, 
+
+Linea 38, pa no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 38, hacerlo no esta en el diccionario.
+Quizas quiso decir: hacer lo, hace rol, acero, acerbo, acerco, 
+
+Linea 40, partner no esta en el diccionario.
+Quizas quiso decir: parten, partear, partire, pater, parne, 
+
+Linea 42, b no esta en el diccionario.
+Quizas quiso decir: be, bu, ca, da, ea, 
+
+Linea 42, gat no esta en el diccionario.
+Quizas quiso decir: gag, gal, gap, gas, gay, 
+
+Linea 42, damn no esta en el diccionario.
+Quizas quiso decir: dan, dama, adan, man, aman, 
+
+Linea 42, gat no esta en el diccionario.
+Quizas quiso decir: gag, gal, gap, gas, gay, 
+
+Linea 43, damn no esta en el diccionario.
+Quizas quiso decir: dan, dama, adan, man, aman, 
+
+Linea 43, hacerlo no esta en el diccionario.
+Quizas quiso decir: hacer lo, hace rol, acero, acerbo, acerco, 
+
+Linea 45, partner no esta en el diccionario.
+Quizas quiso decir: parten, partear, partire, pater, parne, 
+
+Linea 47, b no esta en el diccionario.
+Quizas quiso decir: be, bu, ca, da, ea, 
+
+Linea 48, blones no esta en el diccionario.
+Quizas quiso decir: bones, alones, clones, balones, bolones, 
+
+Linea 49, block no esta en el diccionario.
+Quizas quiso decir: bloc, bloca, bloco, blocs, loca, 
+
+Linea 49, rap no esta en el diccionario.
+Quizas quiso decir: cap, gap, rad, rae, rai, 
+
+Linea 50, game no esta en el diccionario.
+Quizas quiso decir: ame, fame, jame, lame, mame, 
+
+Linea 51, fakes no esta en el diccionario.
+Quizas quiso decir: faces, fajes, fanes, fases, faxes, 
+
+Linea 52, y no esta en el diccionario.
+Quizas quiso decir: ay, ya, ye, yo, ca, 
+
+Linea 52, rock no esta en el diccionario.
+Quizas quiso decir: roca, roce, roco, orca, orce, 
+
+Linea 52, and no esta en el diccionario.
+Quizas quiso decir: ad, ana, ano, rand, anda, 
+
+Linea 52, roll no esta en el diccionario.
+Quizas quiso decir: rol, roel, rola, role, rolo, 
+
+Linea 52, bro no esta en el diccionario.
+Quizas quiso decir: ro, aro, ero, gro, oro, 
+
+Linea 53, buscatela no esta en el diccionario.
+Quizas quiso decir: bus catela, busca tela, bu catela, buscarla, bus catea, 
+
+Linea 53, y no esta en el diccionario.
+Quizas quiso decir: ay, ya, ye, yo, ca, 
+
+Linea 54, dj no esta en el diccionario.
+Quizas quiso decir: aj, da, de, di, do, 
+
+Linea 55, delay no esta en el diccionario.
+Quizas quiso decir: de lay, del ay, velay, deal, del ya, 
+
+Linea 56, psame no esta en el diccionario.
+Quizas quiso decir: pasme, pesame, pase, palme, pasee, 
+
+Linea 58, pasate no esta en el diccionario.
+Quizas quiso decir: pasa te, paste, pasote, pasaje, pasare, 
+
+Linea 59, a no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 62, q no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 63, pa no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 66, low no esta en el diccionario.
+Quizas quiso decir: lo, loa, loe, loo, los, 
+
+Linea 67, life no esta en el diccionario.
+Quizas quiso decir: lie, bife, fife, rife, libe, 
+
+Linea 67, flow no esta en el diccionario.
+Quizas quiso decir: flor, fleo, lo, loa, loe, 
+
+Linea 67, from no esta en el diccionario.
+Quizas quiso decir: foro, forum, forma, forme, formo, 
+
+Linea 67, southside no esta en el diccionario.
+No se encontraron sugerencias para esta palabra
+
+Linea 67, pa no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 68, word no esta en el diccionario.
+Quizas quiso decir: lord, oid, ora, ore, ori, 
+
+Linea 69, up no esta en el diccionario.
+Quizas quiso decir: pu, uf, uh, un, tup, 
+
+Linea 69, a no esta en el diccionario.
+Quizas quiso decir: ca, da, ea, fa, ha, 
+
+Linea 70, fam no esta en el diccionario.
+Quizas quiso decir: fa, mam, fai, fan, far, 
 

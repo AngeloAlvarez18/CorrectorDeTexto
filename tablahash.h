@@ -27,16 +27,6 @@ TablaHash tablahash_crear(unsigned capacidad,
                           FuncionHash hash, FuncionCopiadora copia);
 
 /**
- * Retorna el numero de elementos de la tabla.
- */
-int tablahash_nelems(TablaHash tabla);
-
-/**
- * Retorna la capacidad de la tabla.
- */
-int tablahash_capacidad(TablaHash tabla);
-
-/**
  * Destruye la tabla.
  */
 void tablahash_destruir(TablaHash tabla);
@@ -58,10 +48,8 @@ int tablahash_buscar(TablaHash tabla, void *dato);
 void tablahash_eliminar(TablaHash tabla, void *dato);
 
 /**
- * Imprime todos los datos de la tabla
- */
-void tablahash_imprimir(TablaHash tabla, FuncionVisitante visit);
-
+ * Duplica la capacidad de la tablahash pasada.
+*/
 void tablahash_redimensionar(TablaHash tabla);
 
 

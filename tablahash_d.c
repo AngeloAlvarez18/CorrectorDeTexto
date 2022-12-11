@@ -25,20 +25,10 @@ TablaHash tablahash_crear(unsigned capacidad,
 
   // Inicializamos las casillas con datos nulos.
   for (unsigned idx = 0; idx < capacidad; ++idx) {
-      tabla->elems[idx] = glist_crear();
+    tabla->elems[idx] = glist_crear();
   }
   return tabla;
 }
-
-/**
- * Retorna el numero de elementos de la tabla.
- */
-int tablahash_nelems(TablaHash tabla) { return tabla->numElems; }
-
-/**
- * Retorna la capacidad de la tabla.
- */
-int tablahash_capacidad(TablaHash tabla) { return tabla->capacidad; }
 
 /**
  * Destruye la tabla.
@@ -68,14 +58,14 @@ void tablahash_insertar(TablaHash tabla, void *dato) {
   unsigned idx = tabla->hash(dato) % tabla->capacidad;
 
   // SI la palabra ya se encuentra en la tabla, no hace nada
-  if (glist_buscar(tabla->elems[idx],dato,(FuncionComparadora)tabla->comp)){
+  if (glist_buscar(tabla->elems[idx], dato, (FuncionComparadora) tabla->comp)) {
     return;
   }
-
   // En caso contrario, la agrega a la tabla
-  else{
+  else {
     tabla->numElems++;
-    tabla->elems[idx] = glist_agregar_final(tabla->elems[idx], dato,(FuncionCopiadora) tabla->copia);
+    tabla->elems[idx] = glist_agregar_final(tabla->elems[idx], dato,
+                                          (FuncionCopiadora) tabla->copia);
     return;
   }
 }
@@ -89,10 +79,10 @@ int tablahash_buscar(TablaHash tabla, void *dato) {
 
   // Calculamos la posicion del dato dado, de acuerdo a la funcion hash.
   unsigned idx = tabla->hash(dato) % tabla->capacidad;
-  
+
   // Retornar NULL si la casilla estaba vacia.
-  return glist_buscar(tabla->elems[idx],dato, 
-                      (FuncionComparadora)tabla->comp);
+  return glist_buscar(tabla->elems[idx], dato,
+                      (FuncionComparadora) tabla->comp);
 }
 
 /**
@@ -106,36 +96,28 @@ void tablahash_eliminar(TablaHash tabla, void *dato) {
   // Retornar si la casilla estaba vacia.
   if (glist_vacia(tabla->elems[idx]))
     return;
-    
+
   // Eliminar el elemento de la lista de la casilla si hay coincidencia
-  else if (glist_buscar(tabla->elems[idx],dato,(FuncionComparadora)tabla->comp)) {
+  else if (glist_buscar
+           (tabla->elems[idx], dato, (FuncionComparadora) tabla->comp)) {
     tabla->numElems--;
     tabla->elems[idx] = glist_eliminar(tabla->elems[idx], dato,
-    (FuncionDestructora) tabla->destr, (FuncionComparadora) tabla->comp);
+                                       (FuncionDestructora) tabla->destr,
+                                       (FuncionComparadora) tabla->comp);
     return;
-  }
-  else{
+  } else {
     return;
   }
 }
 
-// void tablahash_imprimir(TablaHash tabla, FuncionVisitante visit){
-//   for(unsigned idx = 0; idx < tabla->capacidad; idx++){
-//     printf("Casilla %d: ", idx);
-//     glist_recorrer(tabla->elems[idx],visit);
-//     printf("\n");
-//   }
-//   return;
-// }
-
 void tablahash_redimensionar(TablaHash tabla) {
-  GList* tmp_elems = tabla->elems;
+  GList *tmp_elems = tabla->elems;
   unsigned tmp_capacidad = tabla->capacidad;
   tabla->numElems = 0;
   tabla->capacidad *= 2;
   tabla->elems = calloc(tabla->capacidad, sizeof(struct _GNode));
   assert(tabla->elems != NULL);
-  
+
   // Itera sobre cada nodo de cada lista, agregando cada
   // elemento a la tabla redimensionada
   for (unsigned i = 0; i < tmp_capacidad; ++i) {

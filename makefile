@@ -11,18 +11,19 @@ PALABRA = palabra
 SUGERENCIAS = sugerencias
 TABLAHASH = tablahash_d
 UTILS = utils
+IO = io
 
-SOURCE = $(UTILS).o 
+SOURCE = $(UTILS).o $(IO).o
 ESTRUCTURAS = $(GLIST).o $(PALABRA).o $(TABLAHASH).o $(SUGERENCIAS).o
 
 # Compilar el programa
 all: $(MAIN).o $(SOURCE) $(ESTRUCTURAS)
-	$(CC) $(FLAGS) $^ -o main
+	$(CC) $(FLAGS) $^ -o main 
 
 
 # Crear .o desde archivos .c
 %.o: %.c
-	$(CC) -c $(CFLAGS) $^ -o $@
+	$(CC) -g -c $(CFLAGS) $^ -o $@
 
 # Compilar para depuracion
 .PHONY: debug

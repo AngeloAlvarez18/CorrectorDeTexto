@@ -4,6 +4,7 @@
 #include "tablahash.h"
 #include "sugerencias.h"
 
+// Estructura principal de Palabra.
 struct _Palabra{
     char* str;
     unsigned len;
@@ -11,7 +12,7 @@ struct _Palabra{
 
 typedef struct _Palabra *Palabra;
 
-// Este include va aca porque o sino tengo una importacion circular
+// Se incluye este header aca para no generar una importacion circular.
 #include "utils.h"
 
 /**

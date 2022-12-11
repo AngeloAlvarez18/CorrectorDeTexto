@@ -2,6 +2,7 @@
 #include "tablahash.h"
 #include "utils.h"
 #include "palabra.h"
+#include "io.h"
 
 /** Capacidad inicial para la tabla hash */
 #define CAPACIDAD_INICIAL 20
