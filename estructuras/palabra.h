@@ -13,7 +13,7 @@ struct _Palabra{
 typedef struct _Palabra *Palabra;
 
 // Se incluye este header aca para no generar una importacion circular.
-#include "utils.h"
+#include "../src/utils.h"
 
 /**
  * Crea una palabra

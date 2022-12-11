@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#include "palabra.h"
-#include "sugerencias.h"
+#include "../estructuras/palabra.h"
+#include "../estructuras/sugerencias.h"
 #include "io.h"
 
 unsigned djb2(Palabra word) {

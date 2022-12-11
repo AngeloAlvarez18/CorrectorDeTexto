@@ -1,7 +1,7 @@
 #ifndef __GLIST_H__
 #define __GLIST_H__
 
-#include "common.h"
+#include "../common.h"
 
 typedef struct _GNode {
   void *data;

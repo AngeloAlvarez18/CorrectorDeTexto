@@ -2,7 +2,7 @@
 #define __TABLAHASH_H__
 
 #include "glist.h"
-#include "common.h"
+#include "../common.h"
 
 
 typedef struct _TablaHash *TablaHash;
@@ -17,7 +17,6 @@ struct _TablaHash {
   FuncionHash hash;
 };
 
-#define FACTOR_CARGA 0.7
 
 /**
  * Crea una nueva tabla hash vacia, con la capacidad dada.

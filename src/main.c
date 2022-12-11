@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "tablahash.h"
+#include "../estructuras/tablahash.h"
 #include "utils.h"
-#include "palabra.h"
+#include "../estructuras/palabra.h"
 #include "io.h"
 
 /** Capacidad inicial para la tabla hash */

@@ -1,9 +1,9 @@
 #ifndef __IO_H__
 #define __IO_H__
-#include "tablahash.h"
+#include "../estructuras/tablahash.h"
 #include <stdio.h>
-#include "sugerencias.h"
-#include "palabra.h"
+#include "../estructuras/sugerencias.h"
+#include "../estructuras/palabra.h"
 
 /**
  * Lee y agrega palabras al diccionario.

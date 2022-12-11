@@ -1,0 +1,20 @@
+Trabajo practico final: Corrector de texto
+
+El proceso de desarrollo de este trabajo consistió en primero 
+pensar en el algoritmo mas optimo y las estructuras que iba a 
+usar.
+
+Despues, a medida que iba creando funciones y avanzando en el programa,
+las funciones iban siendo testeadas.
+
+Cuando el programa ya estaba en funcionamiento, comencé a probar distintos
+archivos de entrada, asi como tambien distintos diccionarios. (Los archivos 
+de entrada y diccionarios probados, se encuentras en las carpetas diccionarios
+y entradas)
+
+Se hizo uso de makefile para facilitar el compilado del programa y tambien
+para depurar el programa, para detectar posibles errores.
+
+Aclaracion: 
+La funcion de hash usada, dbj2 fue extraida de 
+http://www.cse.yorku.ca/~oz/hash.html

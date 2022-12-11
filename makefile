@@ -5,13 +5,13 @@ CC = gcc
 FLAGS = -Wall -Werror -Wextra -std=c99
 
 # Archivos fuente
-MAIN = main
-GLIST = glist
-PALABRA = palabra
-SUGERENCIAS = sugerencias
-TABLAHASH = tablahash_d
-UTILS = utils
-IO = io
+MAIN = src/main
+GLIST = estructuras/glist
+PALABRA = estructuras/palabra
+SUGERENCIAS = estructuras/sugerencias
+TABLAHASH = estructuras/tablahash_d
+UTILS = src/utils
+IO = src/io
 
 SOURCE = $(UTILS).o $(IO).o
 ESTRUCTURAS = $(GLIST).o $(PALABRA).o $(TABLAHASH).o $(SUGERENCIAS).o

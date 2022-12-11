@@ -1,8 +1,8 @@
 #ifndef __UTILS_H__
 #define __UTILS_H__
-#include "palabra.h"
+#include "../estructuras/palabra.h"
 #include <stdio.h>
-#include "tablahash.h"
+#include "../estructuras/tablahash.h"
 
 /**
  * Funcion de hash para palabras.
