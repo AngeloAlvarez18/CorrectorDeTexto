@@ -23,20 +23,20 @@ void leer_y_corregir(char *entrada, char *salida, char *cache,TablaHash tabla);
 Palabra leer_palabra(FILE* archivo, int* linea, int* flag);
 
 /**
- * Lee el archivo de cache, insertando Sugerencias a la tabla hash.
+ * Lee el archivo de cache, insertando Sugerencia a la tabla hash.
 */
 void leer_cache(FILE* archivo, TablaHash cache);
 
 /**
  * Lee el archivo de cache y guardas las palabras con sus sugerencias.
 */
-void escribir_cache(char* arch, Sugerencias sug);
+void escribir_cache(char* arch, Sugerencia sug);
 
 /**
  * Escribe las palabras no encontradas en el diciconario con sus 
  * respectivas sugerencias, en el archivo de salida.
 */
-void escribir_sugerencias(FILE* arch, Sugerencias sug, int linea);
+void escribir_sugerencias(FILE* arch, Sugerencia sug, int linea);
 
 
 #endif /* __IO_H__ */

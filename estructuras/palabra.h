@@ -42,24 +42,34 @@ void palabra_imprimir(Palabra palabra);
 int palabra_comparar(Palabra palabra1, Palabra palabra2);
 
 /**
- * Toma una palabra y la divide en dos palabras
+ * Toma una palabra y la divide en dos palabras, probando todas las combinaciones
 */
-void palabra_dividir(Palabra palabra, TablaHash tabla, Sugerencias sug);
+void palabra_dividir(Palabra palabra, TablaHash tabla, Sugerencia sug);
 
 /**
- * Toma una palabra y permuta todas los caracteres adyacentes
+ * Toma una palabra y permuta todas los caracteres adyacentes,
+ * probando todas las combinaciones.
 */
-void palabra_permutar(Palabra palabra, TablaHash tabla, Sugerencias sug,
+void palabra_permutar(Palabra palabra, TablaHash tabla, Sugerencia sug,
                             GList* not_found, TablaHash tne, int dist);
 
+/**
+ * Toma una palabra y borra un caracter, probando todas las combinaciones.
+*/
 void palabra_borrar_caracter(Palabra palabra, TablaHash tabla,
-                                    Sugerencias sug, GList* not, TablaHash tne, int dist);
+                                    Sugerencia sug, GList* not, TablaHash tne, int dist);
 
+/**
+ * Toma una palabra y cambia un caracter, probando todas las combinaciones.
+*/
 void palabra_cambiar_caracter(Palabra palabra, TablaHash tabla,
-                                    Sugerencias sug, GList* not, TablaHash tne, int dist);
+                                    Sugerencia sug, GList* not, TablaHash tne, int dist);
 
+/**
+ * Toma una palabra y agrega un caracter, probando todas las combinaciones.
+*/
 void palabra_agregar_caracter(Palabra palabra, TablaHash tabla,
-                                    Sugerencias sug, GList* not, TablaHash tne, int dist);
+                                    Sugerencia sug, GList* not, TablaHash tne, int dist);
 
 
 #endif /* __PALABRA_H__ */

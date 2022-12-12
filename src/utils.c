@@ -17,7 +17,7 @@ unsigned djb2(Palabra word) {
   return hash;
 }
 
-unsigned djb2_sug(Sugerencias sug) {
+unsigned djb2_sug(Sugerencia sug) {
   unsigned hash = 5381;
   int c;
   char *str = sug->palabra;
@@ -28,9 +28,12 @@ unsigned djb2_sug(Sugerencias sug) {
   return hash;
 }
 
-void distancia_n(Palabra palabra, TablaHash tabla, Sugerencias sug,
+void distancia_n(Palabra palabra, TablaHash tabla, Sugerencia sug,
                         GList * no_encontradas, TablaHash tne, int dist) {
 
+  // Buscamos sugerencias hasta encontrar 5, o chequear todas las 
+  // combinaciones.
+                            
   if (sug->cant_sug < 5)
     palabra_dividir(palabra, tabla, sug);
 
@@ -53,7 +56,7 @@ void distancia_n(Palabra palabra, TablaHash tabla, Sugerencias sug,
 
 }
 
-Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla,
+Sugerencia buscar_sugerencias(Palabra palabra, TablaHash tabla,
                               TablaHash chequeadas, char* cache) {
 
   // Lista en la que guardaremos palabras a las cuales se les aplicará 
@@ -67,7 +70,7 @@ Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla,
                                   (FuncionHash) djb2,
                                   (FuncionCopiadora)palabra_copia);
 
-  Sugerencias sug = crear_sugerencias(palabra->str, 0, 0);
+  Sugerencia sug = crear_sugerencias(palabra->str, 0, 0);
   int bandera = 1, dist = 1;
   // Buscamos sugerencias a distancia 1
   distancia_n(palabra, tabla, sug, &no_encontradas, tabla_no_encontradas,
@@ -104,13 +107,13 @@ Sugerencias buscar_sugerencias(Palabra palabra, TablaHash tabla,
   return sug;   
 }
 
-Sugerencias buscar_en_cache(TablaHash cache, Sugerencias sug){
+Sugerencia buscar_en_cache(TablaHash cache, Sugerencia sug){
   unsigned idx = cache->hash(sug) % cache->capacidad;
   GList lista = cache->elems[idx];
-  Sugerencias sug_ret = sug;
+  Sugerencia sug_ret = sug;
   int flag = 1;
   for (GList node = lista; node != NULL && flag; node = node->next){  
-    if (strcmp(((Sugerencias)(node->data))->palabra, sug->palabra) == 0){
+    if (strcmp(((Sugerencia)(node->data))->palabra, sug->palabra) == 0){
       sug_ret = node->data;
       sugerencias_destruir(sug);
       flag = 0;

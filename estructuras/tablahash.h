@@ -7,6 +7,7 @@
 
 typedef struct _TablaHash *TablaHash;
 
+// Estrucura principal de TablaHash.
 struct _TablaHash {
   GList *elems;
   unsigned numElems;

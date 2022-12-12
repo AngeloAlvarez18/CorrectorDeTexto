@@ -2,8 +2,10 @@
 #include <ctype.h>
 #include <string.h>
 
+
 void leer_diccionario(char *path, TablaHash tabla) {
   FILE *file = fopen(path, "r");
+  // Chequeamos si se pudo abrir el archivo correctamente.
   if (file == NULL) 
     quit("leer_diccionario.fopen");
 
@@ -33,6 +35,7 @@ void leer_diccionario(char *path, TablaHash tabla) {
 
 void leer_y_corregir(char *entrada, char *salida, char *cache,TablaHash tabla) {
   FILE *arch_entrada = fopen(entrada, "r");
+  // Chequeamos si se pudo abrir el archivo correctamente.
   if(arch_entrada == NULL)
     quit("readfile.fopen");
 
@@ -42,7 +45,7 @@ void leer_y_corregir(char *entrada, char *salida, char *cache,TablaHash tabla) {
   // de leer el archivo de entrada.
   int linea = 1, flag = 1;
   Palabra palabra;
-  Sugerencias sugerencias;
+  Sugerencia sugerencias;
 
   // Tabla en donde se va a almacenar palabras a las que ya se le
   // encontraron sugerencias o palabras que estan en el cache
@@ -53,6 +56,7 @@ void leer_y_corregir(char *entrada, char *salida, char *cache,TablaHash tabla) {
                                 (FuncionCopiadora) sugerencia_copia);
   
   FILE* arch_cache = fopen(cache, "r");
+  // Chequeamos si se pudo abrir el archivo correctamente.
   if (arch_cache == NULL)
     quit("readfile.fopen");
   
@@ -139,7 +143,7 @@ void leer_cache(FILE * archivo, TablaHash cache) {
   char c;
   int i = 0, count = 0, cant_sug;
   char palabra[30];
-  Sugerencias sug;
+  Sugerencia sug;
   Palabra word;
 
   while ((c = getc(archivo)) != EOF) {
@@ -195,7 +199,7 @@ void leer_cache(FILE * archivo, TablaHash cache) {
 }
 
 
-void escribir_cache(char* arch, Sugerencias sug) {
+void escribir_cache(char* arch, Sugerencia sug) {
   FILE* arch_cache = fopen(arch, "a");
   if (arch_cache == NULL)
     quit("escribir_cache.fopen");
@@ -217,7 +221,7 @@ void escribir_cache(char* arch, Sugerencias sug) {
   return;
 }
 
-void escribir_sugerencias(FILE* arch, Sugerencias sug, int linea){
+void escribir_sugerencias(FILE* arch, Sugerencia sug, int linea){
   if (sug->cant_sug == 0){
     fprintf(arch, "Linea %d, %s no esta en el diccionario.\n", linea,
             sug->palabra);

@@ -5,8 +5,8 @@
 #include <string.h>
 
 
-Sugerencias crear_sugerencias(char *word, int cant_sug, int cache) {
-  Sugerencias sug = malloc(sizeof(struct _Sugerencias));
+Sugerencia crear_sugerencias(char *word, int cant_sug, int cache) {
+  Sugerencia sug = malloc(sizeof(struct _Sugerencias));
   assert(sug != NULL);
 
   sug->palabra = malloc(sizeof(char) * 30);
@@ -18,19 +18,19 @@ Sugerencias crear_sugerencias(char *word, int cant_sug, int cache) {
 }
 
 
-void sugerencias_destruir(Sugerencias sug) {
+void sugerencias_destruir(Sugerencia sug) {
   free(sug->palabra);
   glist_destruir(sug->list, (FuncionDestructora) palabra_destruir);
   free(sug);
   return;
 }
 
-int sugerencia_comparar(Sugerencias sug1, Sugerencias sug2) {
+int sugerencia_comparar(Sugerencia sug1, Sugerencia sug2) {
   return strcmp(sug1->palabra, sug2->palabra);
 }
 
-Sugerencias sugerencia_copia(Sugerencias sug) {
-  Sugerencias sug_copia = crear_sugerencias(sug->palabra, sug->cant_sug,
+Sugerencia sugerencia_copia(Sugerencia sug) {
+  Sugerencia sug_copia = crear_sugerencias(sug->palabra, sug->cant_sug,
                                             sug->cache);
                                             
   for (GList node = sug->list; node != NULL; node = node->next)
